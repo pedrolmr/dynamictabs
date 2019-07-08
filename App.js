@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView} from 'react-native';
 import { Button, Tabs, Tab, Input } from 'native-base';
 // import constants from '../../helpers/constants';
 import {
@@ -223,7 +223,129 @@ class SearchForm extends Component {
   render() {
     // console.log('IN RENDER', this.props);
     return (
-      <View>
+      // <SafeAreaView>
+      // <View style={{ marginBottom: 20 }}>
+      //   <Tabs
+      //     style={styles.container}
+      //     activeTextStyle={{ color: '#64aab8' }}
+      //     tabBarUnderlineStyle={{ backgroundColor: '#000' }}
+      //     page={this.state.tabPage}
+      //   >
+      //     <Tab
+      //       heading="Name"
+      //       style={[styles.nameInput, { color: '#64aab8' }]}
+      //       activeTextStyle={styles.activeTextStyle}
+      //       textStyle={styles.textStyle}
+      //       activeTabStyle={{ backgroundColor: '#fff' }}
+      //       tabStyle={{ backgroundColor: '#fff' }}
+      //     >
+      //       <View style={styles.nameInputFullWidth}>
+      //         <Input
+      //           placeholder="First and last, middle optional"
+      //           style={[styles.textInput, !this.state.inputValidate ? styles.error : null]}
+      //           value={this.state.name}
+      //           onChangeText={text => this.inputHandler('name', text)}
+      //         />
+      //         <View>
+      //           <Input
+      //             placeholder="City, State"
+      //             // style={styles.textInput}
+      //             style={[styles.textInput, !this.state.inputValidate ? styles.error : null]}
+      //             value={this.state.cityState}
+      //             onChangeText={text => this.inputHandler('cityState', text)}
+      //           />
+      //         </View>
+      //       </View>
+      //     </Tab>
+
+      //     <Tab
+      //       heading="Email"
+      //       activeTextStyle={[styles.activeTextStyle]}
+      //       textStyle={styles.textStyle}
+      //       activeTabStyle={[{ backgroundColor: '#fff' }]}
+      //       tabStyle={[{ backgroundColor: '#fff' }]}
+      //       style={[{ flex: 0 }]}
+
+
+      //     >
+      //       <View>
+      //         <Input
+      //           placeholder="Email address"
+      //           style={[styles.textInput, !this.state.inputValidate ? styles.error : null]}
+      //           value={this.state.email}
+      //           onChangeText={text => this.inputHandler('email', text)}
+      //         />
+      //       </View>
+      //     </Tab>
+
+      //     <Tab
+      //       heading="Address"
+      //       activeTextStyle={styles.activeTextStyle}
+      //       textStyle={styles.textStyle}
+      //       activeTabStyle={{ backgroundColor: '#fff' }}
+      //       tabStyle={{ backgroundColor: '#fff' }}
+      //     >
+      //       <View>
+      //         <Input
+      //           placeholder="Mailing address"
+      //           style={[styles.textInput, !this.state.inputValidate ? styles.error : null]}
+      //           value={this.state.address}
+      //           onChangeText={text => this.inputHandler('address', text)}
+      //         />
+      //       </View>
+      //     </Tab>
+
+      //     <Tab
+      //       heading="Phone"
+      //       activeTextStyle={styles.activeTextStyle}
+      //       textStyle={styles.textStyle}
+      //       activeTabStyle={{ backgroundColor: '#fff' }}
+      //       tabStyle={{ backgroundColor: '#fff' }}
+      //     >
+      //       <View>
+      //         <Input
+      //           placeholder="Phone any format, no letters"
+      //           style={[styles.textInput, !this.state.inputValidate ? styles.error : null]}
+      //           value={this.state.phone}
+      //           onChangeText={text =>
+      //             this.inputHandler('phone', text)}
+      //         />
+      //       </View>
+      //     </Tab>
+
+      //     <Tab
+      //       heading="URL"
+      //       activeTextStyle={styles.activeTextStyle}
+      //       textStyle={styles.textStyle}
+      //       activeTabStyle={{ backgroundColor: '#fff' }}
+      //       tabStyle={{ backgroundColor: '#fff' }}
+      //     >
+      //       <View>
+      //         <Input
+      //           placeholder="Social profile link or any URL"
+      //           style={[styles.textInput, !this.state.inputValidate ? styles.error : null]}
+      //           value={this.state.url}
+      //           onChangeText={text => this.inputHandler('url', text)}
+      //         />
+      //       </View>
+      //     </Tab>
+      //   </Tabs>
+      //   <View style={{ flexDirection: 'row' }}>
+      //     <Button style={styles.button} onPress={this.handleFormSubmit}>
+      //       <Text style={styles.buttonText}> Search </Text>
+      //     </Button>
+
+      //     <Button style={styles.greyButton} onPress={this.startOver}>
+      //       <Text style={styles.buttonText}> Start Over </Text>
+      //     </Button>
+
+      //     {/* <Button info style={styles.greyButton} onPress={this.getData}>
+      //       <Text style={styles.buttonText}> get object </Text>
+      //     </Button> */}
+      //   </View>
+      // </View>
+      // </SafeAreaView>
+      <View style={{ marginBottom: 20 }}>
         <Tabs
           style={styles.container}
           activeTextStyle={{ color: '#64aab8' }}
@@ -241,15 +363,14 @@ class SearchForm extends Component {
             <View style={styles.nameInputFullWidth}>
               <Input
                 placeholder="First and last, middle optional"
-                style={[styles.textInput, !this.state.inputValidate ? styles.error : null]}
+                style={styles.textInput}
                 value={this.state.name}
                 onChangeText={text => this.inputHandler('name', text)}
               />
               <View>
                 <Input
                   placeholder="City, State"
-                  // style={styles.textInput}
-                  style={[styles.textInput, !this.state.inputValidate ? styles.error : null]}
+                  style={styles.textInput}
                   value={this.state.cityState}
                   onChangeText={text => this.inputHandler('cityState', text)}
                 />
@@ -264,13 +385,11 @@ class SearchForm extends Component {
             activeTabStyle={[{ backgroundColor: '#fff' }]}
             tabStyle={[{ backgroundColor: '#fff' }]}
             style={[{ flex: 0 }]}
-
-
           >
             <View>
               <Input
                 placeholder="Email address"
-                style={[styles.textInput, !this.state.inputValidate ? styles.error : null]}
+                style={styles.textInput}
                 value={this.state.email}
                 onChangeText={text => this.inputHandler('email', text)}
               />
@@ -287,7 +406,7 @@ class SearchForm extends Component {
             <View>
               <Input
                 placeholder="Mailing address"
-                style={[styles.textInput, !this.state.inputValidate ? styles.error : null]}
+                style={styles.textInput}
                 value={this.state.address}
                 onChangeText={text => this.inputHandler('address', text)}
               />
@@ -304,10 +423,9 @@ class SearchForm extends Component {
             <View>
               <Input
                 placeholder="Phone any format, no letters"
-                style={[styles.textInput, !this.state.inputValidate ? styles.error : null]}
+                style={styles.textInput}
                 value={this.state.phone}
-                onChangeText={text =>
-                  this.inputHandler('phone', text)}
+                onChangeText={text => this.inputHandler('phone', text)}
               />
             </View>
           </Tab>
@@ -322,7 +440,7 @@ class SearchForm extends Component {
             <View>
               <Input
                 placeholder="Social profile link or any URL"
-                style={[styles.textInput, !this.state.inputValidate ? styles.error : null]}
+                style={styles.textInput}
                 value={this.state.url}
                 onChangeText={text => this.inputHandler('url', text)}
               />
@@ -337,19 +455,17 @@ class SearchForm extends Component {
           <Button style={styles.greyButton} onPress={this.startOver}>
             <Text style={styles.buttonText}> Start Over </Text>
           </Button>
-
-          {/* <Button info style={styles.greyButton} onPress={this.getData}>
-            <Text style={styles.buttonText}> get object </Text>
-          </Button> */}
         </View>
       </View>
-    )
+      )
+    }
   }
-}
+
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
-    margin: 5, flex: 0
+    margin: 5,
+    flex: 0
   },
   textInput: {
     borderColor: '#64aab8',
@@ -368,7 +484,7 @@ const styles = StyleSheet.create({
   button: {
     margin: 10,
     padding: 10,
-    backgroundColor: `${constants.highlightColor}`
+    backgroundColor: 'rgb(80,141,179)'
   },
 
   tab: {
@@ -383,13 +499,13 @@ const styles = StyleSheet.create({
     color: '#64aab8',
     lineHeight: 17,
     padding: 15,
-    backgroundColor: `${constants.highlightColor}`,
+    backgroundColor: 'rgb(80,141,179)',
     borderRadius: 10,
     marginBottom: 20
   },
   matchesText: {
     fontSize: 20,
-    color: `${constants.highlightColor}`,
+    color: 'rgb(80,141,179)',
     marginBottom: 20
   },
   greyButton: {
@@ -399,18 +515,17 @@ const styles = StyleSheet.create({
   },
   activeTextStyle: {
     color: '#000',
-    fontFamily: constants.fontFamily,
+    // fontFamily: constants.fontFamily,
     fontSize: 16
   },
   textStyle: {
     color: '#64aab8',
-    fontFamily: constants.fontFamily,
+    // fontFamily: constants.fontFamily,
     fontSize: 16
   },
   nameInputFullWidth: {
     width: '100%'
   }
 });
-
 
 export default SearchForm;
